@@ -1,0 +1,16 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+
+# Environment variables (NEVER commit this)
+.env
+
+# Editor / OS system files
+.DS_Store
+*.swp
