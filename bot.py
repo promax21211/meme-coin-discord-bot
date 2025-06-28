@@ -138,13 +138,13 @@ async def check_reminders():
             screener_data = await fetch_json(f"{DEX_API}/pairs/solana/{token_address}")
             token = screener_data.get("pair")
             if token:
-    msg = (
-        f"📢 Update for `{token['baseToken']['name']}`\n"
-        f"💰 Price: {token['priceUsd']}\n"
-        f"📈 5m Volume: ${token['volume']['m5']}\n"
-        f"💧 Liquidity: ${token['liquidity']['usd']}"
-    )
-    await user.send(msg)
+                msg = (
+                    f"📢 Update for `{token['baseToken']['name']}`\n"
+                    f"💰 Price: {token['priceUsd']}\n"
+                    f"📈 5m Volume: ${token['volume']['m5']}\n"
+                    f"💧 Liquidity: ${token['liquidity']['usd']}"
+                )
+                await user.send(msg)
         except:
             continue
 
