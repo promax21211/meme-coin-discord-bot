@@ -6,6 +6,20 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
 load_dotenv()
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is alive!"
+
+def run_flask():
+    app.run(host='0.0.0.0', port=8080)
+
+# Start Flask server in background
+Thread(target=run_flask).start()
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
